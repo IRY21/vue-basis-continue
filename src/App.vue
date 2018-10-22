@@ -15,22 +15,16 @@
 </template>
 
 <script>
+import ListMixin from './listMixin'
+
 export default {
   data() {
     return {
-      title: "Hello I am Vue!",
-      searchName: '',
-      names: ['Ray', 'Yu', 'Nob', 'WFY']
+      title: "Hello I am Vue!"
     };
   },
 
-  computed: {
-    filteredNames() {
-      return this.names.filter(name => {
-        return name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1;
-      });
-    }
-  },
+  mixins: [ListMixin],
 
   filters: {
     lowercase(val) {
