@@ -2,7 +2,8 @@
   <div>
       <h2>Form inputs</h2>
 
-      <input type="text" >
+      <input type="text" v-model.lazy="name">
+      <p>{{ name }}</p>
   </div>
 </template>
 
@@ -11,7 +12,7 @@
 export default {
   data() {
     return {
-      name: ""
+      name: "Initial state"
     };
   }
 };
