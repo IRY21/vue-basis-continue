@@ -5,7 +5,7 @@
       <input type="text" v-model="searchName">
 
       <ul>
-        <li v-for="name of names">{{ name }}</li>
+        <li v-for="name of filteredNames">{{ name }}</li>
       </ul>
   </div>
 </template>
@@ -18,6 +18,14 @@ export default {
       searchName: '',
       names: ['Ray', 'Yu', 'Nob', 'WFY']
     };
+  },
+
+  computed: {
+    filteredNames() {
+      return this.names.filter(name => {
+        return name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1;
+      });
+    }
   },
 
   filters: {
