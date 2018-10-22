@@ -2,28 +2,22 @@
   <div>
       <h2>Form inputs</h2>
 
-      <input type="text" v-model.number="age">
-
-      <hr>
-
-      <p>{{ age }}</p>
+      <appOnoff></appOnoff>
   </div>
 </template>
 
 <script>
+import Onoff from "./Onoff.vue";
 
 export default {
   data() {
     return {
-      age: 25
+      
     };
   },
 
-  watch: {
-    age(val) {
-      console.log(val);
-      console.log(typeof val);
-    }
+  components: {
+    appOnoff: Onoff
   }
 };
 </script>
