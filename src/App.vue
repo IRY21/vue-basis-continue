@@ -1,6 +1,9 @@
 <template>
   <div>
       <h2>{{ title }}</h2>
+      <h2>{{ title | lowercase }}</h2>
+      <h2>{{ title | uppercase }}</h2>
+      <h2>{{ title | uppercase | lowercase }}</h2>
   </div>
 </template>
 
@@ -10,6 +13,12 @@ export default {
     return {
       title: "Hello I am Vue!"
     };
+  },
+
+  filters: {
+    lowercase(val) {
+      return val.toLowerCase();
+    }
   }
 };
 </script>
