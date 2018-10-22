@@ -1,9 +1,12 @@
 <template>
   <div>
       <h2>{{ title }}</h2>
-      <h2>{{ title | lowercase }}</h2>
-      <h2>{{ title | uppercase }}</h2>
-      <h2>{{ title | uppercase | lowercase }}</h2>
+
+      <input type="text" v-model="searchName">
+
+      <ul>
+        <li v-for="name of names">{{ name }}</li>
+      </ul>
   </div>
 </template>
 
@@ -11,7 +14,9 @@
 export default {
   data() {
     return {
-      title: "Hello I am Vue!"
+      title: "Hello I am Vue!",
+      searchName: '',
+      names: ['Ray', 'Yu', 'Nob', 'WFY']
     };
   },
 
