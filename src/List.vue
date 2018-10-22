@@ -1,24 +1,19 @@
 <template>
-  <div>
-      <h2>{{ title }}</h2>
+<div>
+    <h2>List</h2>
 
-      <input type="text" v-model="searchName">
+    <input type="text" v-model="searchName">
 
-      <ul>
+    <ul>
         <li v-for="name of filteredNames">{{ name }}</li>
-      </ul>
-
-      <hr>
-
-      <appList></appList>
-  </div>
+    </ul>
+</div>
 </template>
 
 <script>
 export default {
-  data() {
+    data() {
     return {
-      title: "Hello I am Vue!",
       searchName: '',
       names: ['Ray', 'Yu', 'Nob', 'WFY']
     };
@@ -30,15 +25,9 @@ export default {
         return name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1;
       });
     }
-  },
-
-  filters: {
-    lowercase(val) {
-      return val.toLowerCase();
-    }
   }
 };
 </script>
 
-<style scoped>
+<style>
 </style>
