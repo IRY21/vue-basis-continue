@@ -13,6 +13,7 @@
         >
         <div class="invalid-feedback" v-if="!$v.email.required">Email field is required</div>
         <div class="invalid-feedback" v-if="!$v.email.email">Email format is invalid</div>
+        <div class="invalid-feedback" v-if="!$v.email.uniqEmail">This email is alredy exists</div>
       </div>
 
       <div class="form-group">
@@ -64,7 +65,17 @@ export default {
   validations: {
     email: {
       required,
-      email
+      email,
+      uniqEmail(newEmail) {
+        return new Promise((resolve, reject) => {
+          if (newEmail === '') return true;
+          
+          setTimeout(() => {
+            const val = newEmail !== 'test@mail.ru';
+            resolve(val);
+          }, 3000);
+        });
+      }
     },
     password: {
       required,
