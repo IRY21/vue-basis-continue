@@ -9,17 +9,10 @@
             Back
         </button>
         <br>
-        <!-- <router-link 
-            class="btn btn-info mt-2"
-            tag="button"
-            :to="'/car/' + id + '/full'"
-        >
-            Full info
-        </router-link> -->
         <router-link 
             class="btn btn-info mt-2"
             tag="button"
-            :to="{name: 'carFull', params: {id}}"
+            :to="{name: 'carFull', params: {id}, query: {name: 'Mazda', year: 2000}}"
         >
             Full info
         </router-link>
