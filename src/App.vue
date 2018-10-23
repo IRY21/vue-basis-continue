@@ -1,29 +1,13 @@
 <template>
-  <div>
-      <h2>Form inputs</h2>
-
-      <appOnoff v-model="switched"></appOnoff>
-
-      <div>
-        <h3 v-if="switched">Component is enabled</h3>
-        <h3 v-else>Component is disabled</h3>
-      </div>
+  <div class="container">
+    <h1>Hello world!</h1>
   </div>
 </template>
 
 <script>
-import Onoff from "./Onoff.vue";
 
 export default {
-  data() {
-    return {
-      switched: false
-    };
-  },
 
-  components: {
-    appOnoff: Onoff
-  }
 };
 </script>
 
