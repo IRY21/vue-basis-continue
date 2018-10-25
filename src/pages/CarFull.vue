@@ -6,7 +6,7 @@
         <div class="scroll"></div>
 
         <h6 id="scroll">Hello from the bottom</h6>
-        
+
         <div class="scroll"></div>
     </div>
 </template>
@@ -17,6 +17,11 @@ export default {
         year() {
             return this.$route.query.year;
         }
+    },
+
+    beforeRouteEnter(to, fromR, next) {
+        console.log('beforeRouterEnter');
+        next();
     }
 }
 </script>
