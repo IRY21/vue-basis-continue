@@ -9,6 +9,11 @@
       "name": "Tesla",
       "year": 2018,
       "id": 2
+    },
+    {
+      "name": "Ford2",
+      "year": 2018,
+      "id": 3
     }
   ]
 }
